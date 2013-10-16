@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="toolkit.color">
+
+  <!-- Control Panel Views. -->
+  <!-- ==================== -->
+  <!--
+  <browser:page
+      class=".controlpanel.ToolkitColorSettingsControlPanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      layer=".interfaces.IToolkitColor"
+      name="toolkit-color-controlpanel"
+      permission="plone.app.controlpanel.Site"
+      />
+    -->
+</configure>

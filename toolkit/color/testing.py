@@ -17,36 +17,34 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 ###############################################################################
-"""Test Setup of toolkit.color"""
-
-# python imports
-import unittest2 as unittest
+"""Test Layer toolkit.color"""
 
 # zope imports
-from Products.CMFCore.utils import getToolByName
-from plone.browserlayer import utils as layerutils
-
-# local imports
-from toolkit.color.browser.interfaces import IToolkitColor
-from toolkit.color.testing import (TOOLKIT_COLOR_INTEGRATION_TESTING,
+from plone.app.testing import (
+    IntegrationTesting,
+    PloneSandboxLayer,
+    PLONE_FIXTURE,
+    applyProfile,
 )
+from zope.configuration import xmlconfig
 
 
-class TestSetup(unittest.TestCase):
-    """Setup Test Case for toolkit.color."""
-    layer = TOOLKIT_COLOR_INTEGRATION_TESTING
+class ToolkitColor(PloneSandboxLayer):
+    """Custom Test Layer for toolkit.color"""
+    defaultBases = (PLONE_FIXTURE, )
 
-    def setUp(self):
-        self.app = self.layer['app']
-        self.portal = self.layer['portal']
-        self.qi_tool = getToolByName(self.portal, 'portal_quickinstaller')
+    def setUpZope(self, app, configurationContext):
+        # Load ZCML for this package
+        import toolkit.color
+        xmlconfig.file('configure.zcml',
+                       toolkit.color,
+                       context=configurationContext)
 
-    def test_product_is_installed(self):
-        """Test that the product is installed."""
-        self.assertTrue(self.qi_tool.isProductInstalled(
-            'toolkit.color'))
+    def setUpPloneSite(self, portal):
+        applyProfile(portal, 'toolkit.color:default')
 
-    def test_browserlayer(self):
-        """Test that the browserlayer is registered."""
-        self.assertIn(IToolkitColor, layerutils.registered_layers())
 
+TOOLKIT_COLOR_FIXTURE = ToolkitColor()
+TOOLKIT_COLOR_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(TOOLKIT_COLOR_FIXTURE, ),
+    name="ToolkitColor:Integration")

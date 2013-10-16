@@ -6,6 +6,8 @@
     i18n_domain="toolkit.color">
 
   <includeDependencies package="." />
+  <include package=".browser" />
+  
   <genericsetup:registerProfile
       name="default"
       title="toolkit.color"

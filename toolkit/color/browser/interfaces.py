@@ -17,36 +17,11 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 ###############################################################################
-"""Test Setup of toolkit.color"""
-
-# python imports
-import unittest2 as unittest
+"""Interface definitions."""
 
 # zope imports
-from Products.CMFCore.utils import getToolByName
-from plone.browserlayer import utils as layerutils
-
-# local imports
-from toolkit.color.browser.interfaces import IToolkitColor
-from toolkit.color.testing import (TOOLKIT_COLOR_INTEGRATION_TESTING,
-)
+from plone.theme.interfaces import IDefaultPloneLayer
 
 
-class TestSetup(unittest.TestCase):
-    """Setup Test Case for toolkit.color."""
-    layer = TOOLKIT_COLOR_INTEGRATION_TESTING
-
-    def setUp(self):
-        self.app = self.layer['app']
-        self.portal = self.layer['portal']
-        self.qi_tool = getToolByName(self.portal, 'portal_quickinstaller')
-
-    def test_product_is_installed(self):
-        """Test that the product is installed."""
-        self.assertTrue(self.qi_tool.isProductInstalled(
-            'toolkit.color'))
-
-    def test_browserlayer(self):
-        """Test that the browserlayer is registered."""
-        self.assertIn(IToolkitColor, layerutils.registered_layers())
-
+class IToolkitColor(IDefaultPloneLayer):
+    """Marker interface that defines a Zope 3 browser layer."""
