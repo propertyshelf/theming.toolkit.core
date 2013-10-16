@@ -1,1 +1,1 @@
-"""Browser components for toolkit.color"""
+"""Browser components for theming.toolkit.color"""

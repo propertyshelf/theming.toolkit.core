@@ -1,1 +1,1 @@
-""" Tests for toolkit.color """
+""" Tests for theming.toolkit.color """

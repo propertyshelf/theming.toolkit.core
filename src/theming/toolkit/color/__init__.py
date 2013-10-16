@@ -1,5 +1,1 @@
-# -*- extra stuff goes here -*-
-
-
-def initialize(context):
-    """Initializer called when used as a Zope 2 product."""
+"""A product that allows to change a set of theme colors in it's configuration."""

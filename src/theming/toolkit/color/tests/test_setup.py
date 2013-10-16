@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
 
-###############################################################################
-#
-# Copyright (c) 2013 Propertyshelf, Inc. and its Contributors.
-# All Rights Reserved.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AS IS AND ANY EXPRESSED OR
-# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
-# EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT,
-# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
-# OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-# EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-###############################################################################
-"""Test Setup of toolkit.color"""
+"""Test Setup of theming.toolkit.color"""
 
 # python imports
 import unittest2 as unittest
@@ -27,8 +10,8 @@ from Products.CMFCore.utils import getToolByName
 from plone.browserlayer import utils as layerutils
 
 # local imports
-from toolkit.color.browser.interfaces import IToolkitColor
-from toolkit.color.testing import (TOOLKIT_COLOR_INTEGRATION_TESTING,
+from theming.toolkit.color.browser.interfaces import IToolkitColor
+from theming.toolkit.color.testing import (TOOLKIT_COLOR_INTEGRATION_TESTING,
 )
 
 
@@ -44,7 +27,7 @@ class TestSetup(unittest.TestCase):
     def test_product_is_installed(self):
         """Test that the product is installed."""
         self.assertTrue(self.qi_tool.isProductInstalled(
-            'toolkit.color'))
+            'theming.toolkit.color'))
 
     def test_browserlayer(self):
         """Test that the browserlayer is registered."""

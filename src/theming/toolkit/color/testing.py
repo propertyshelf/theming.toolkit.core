@@ -35,13 +35,13 @@ class ToolkitColor(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML for this package
-        import toolkit.color
+        import theming.toolkit.color
         xmlconfig.file('configure.zcml',
-                       toolkit.color,
+                       theming.toolkit.color,
                        context=configurationContext)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'toolkit.color:default')
+        applyProfile(portal, 'theming.toolkit.color:default')
 
 
 TOOLKIT_COLOR_FIXTURE = ToolkitColor()
