@@ -10,7 +10,7 @@ setup(
     version=version,
     description='A product that allows to change a set of theme colors in ' \
                 'it\'s configuration.',
-    long_description=open('README.txt').read() + '\n' +
+    long_description=open('README.rst').read() + '\n' +
                      open(os.path.join("docs", 'HISTORY.txt')).read(),
     # Get more strings from
     # http://pypi.python.org/pypi?:action=list_classifiers
