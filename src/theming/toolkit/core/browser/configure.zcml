@@ -5,13 +5,13 @@
 
   <!-- Control Panel Views. -->
   <!-- ==================== -->
-  <!--
+  
   <browser:page
-      class=".controlpanel.ToolkitColorSettingsControlPanel"
+      class=".controlpanel.ToolkitSettingsControlPanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      layer=".interfaces.IToolkitColor"
-      name="toolkit-color-controlpanel"
+      layer=".interfaces.IThemingToolkitCore"
+      name="toolkit-controlpanel"
       permission="plone.app.controlpanel.Site"
       />
-    -->
+
 </configure>

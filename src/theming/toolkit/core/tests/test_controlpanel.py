@@ -29,7 +29,7 @@ class TestToolkitControlPanel(unittest.TestCase):
         self.registry = Registry()
         self.registry.registerInterface(IToolkitSettings)
 
-    def test_tool_controlpanel_view(self):
+    def test_toolkit_controlpanel_view(self):
         """Test that the toolkit configuration view is available."""
         view = getMultiAdapter((self.portal, self.portal.REQUEST),
                                name='toolkit-controlpanel')

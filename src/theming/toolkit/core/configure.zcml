@@ -7,13 +7,7 @@
 
   <includeDependencies package="." />
   <include package=".browser" />
-
-  <genericsetup:registerProfile
-      description="Installs the theming.toolkit.core package"
-      directory="profiles/default"
-      name="default"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      title="theming.toolkit.core"
-      />
+  <include file="permissions.zcml" />
+  <include file="profiles.zcml" />
 
 </configure>
