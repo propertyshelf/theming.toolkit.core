@@ -1,1 +1,0 @@
-"""Browser components for theming.toolkit.color"""

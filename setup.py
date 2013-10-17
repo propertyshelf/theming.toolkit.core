@@ -6,10 +6,9 @@ import os
 version = '0.1'
 
 setup(
-    name='theming.toolkit.color',
+    name='theming.toolkit.core',
     version=version,
-    description='A product that allows to change a set of theme colors in ' \
-                'it\'s configuration.',
+    description='Pluggable theming configuration with Diazo for Plone.',
     long_description=open('README.rst').read() + '\n' +
                      open(os.path.join("docs", 'HISTORY.txt')).read(),
     # Get more strings from

@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<layers>
-  <layer
-      name="theming.toolkit.color" 
-      interface="theming.toolkit.color.browser.interfaces.IToolkitColor"
-      />
-</layers>
