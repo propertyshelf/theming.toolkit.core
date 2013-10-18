@@ -29,6 +29,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'collective.z3cform.colorpicker',
     ],
     extras_require={
         'test': [
