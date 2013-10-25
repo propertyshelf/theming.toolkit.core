@@ -5,7 +5,9 @@
 
   <!-- Control Panel Views. -->
   <!-- ==================== -->
-  
+
+  <include package="plone.app.controlpanel" />
+
   <browser:page
       class=".controlpanel.ToolkitSettingsControlPanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
