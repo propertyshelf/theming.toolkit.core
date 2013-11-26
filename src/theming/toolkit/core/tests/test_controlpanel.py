@@ -13,6 +13,7 @@ from zope.interface import directlyProvides
 
 # local imports
 from theming.toolkit.core.browser.interfaces import IThemingToolkitCore
+from theming.toolkit.core.browser.controlpanel import ToolkitSettingsEditForm
 from theming.toolkit.core.interfaces import IToolkitSettings
 from theming.toolkit.core.testing import THEMING_TOOLKIT_CORE_INTEGRATION_TESTING
 
