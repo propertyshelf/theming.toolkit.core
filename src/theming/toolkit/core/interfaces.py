@@ -20,7 +20,7 @@ class IToolkitSettings(Interface):
 
     theme_leadcolor = schema.TextLine(
         default=u"",
-        required=True,
+        required=False,
         title=_(
             u"label_toolkit_theme_leadcolor",
             default=u"The main color for this theme.",
@@ -36,19 +36,29 @@ class IToolkitSettings(Interface):
         ),
     )
 
-    headerplugin_title = schema.TextLine(
-        required=False,
-        title=_(
-            u'Header Extra Title',
-            default=u'Extra Title',
-        ),
-    )
-
     headerplugin_code =schema.Text(
         description=PMF(
             u'help_plugin_code',
-            default=u'Please enter the Header Plugin Code.',
+            default=u'Please enter the Social Header Plugin Code.',
         ),
         required=False,
-        title=PMF(u'label_plugin_code', default=u'Plugin Code'),
+        title=PMF(u'label_plugin_code', default=u'Social Plugins Code'),
+    )
+
+    show_title_contact = schema.Bool(
+        default=True,
+        required=False,
+        title=_(
+            u"label_show_header_plugin",
+            default=u"Show Site title & contact viewlet",
+        ),
+    )
+
+    contact_code =schema.TextLine(
+        default=u"",
+        required=False,
+        title=_(
+            u"label_toolkit_contact_code",
+            default=u"Contact Info for Website header",
+        )    
     )
