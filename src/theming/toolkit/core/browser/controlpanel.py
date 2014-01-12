@@ -4,8 +4,8 @@
 # zope imports
 from plone.app.registry.browser import controlpanel
 from z3c.form import field
-from collective.z3cform.colorpicker.colorpicker import ColorpickerFieldWidget
-from collective.z3cform.colorpicker.colorpickeralpha import ColorpickerAlphaFieldWidget
+#from collective.z3cform.colorpicker.colorpicker import ColorpickerFieldWidget
+#from collective.z3cform.colorpicker.colorpickeralpha import ColorpickerAlphaFieldWidget
 
 # local imports
 from theming.toolkit.core.i18n import _
@@ -18,7 +18,7 @@ class ToolkitSettingsEditForm(controlpanel.RegistryEditForm):
     schema = IToolkitSettings
     label = _(u"heading_toolkit_settings", u"Propertyshelf Theming Toolkit Settings")
     fields = field.Fields(IToolkitSettings)
-    fields['theme_leadcolor'].widgetFactory = ColorpickerFieldWidget
+    #fields['theme_leadcolor'].widgetFactory = ColorpickerFieldWidget
 
     def updateFields(self):
         super(ToolkitSettingsEditForm, self).updateFields()

@@ -24,7 +24,16 @@ class TestToolkitRegistry(unittest.TestCase):
 
     def test_toolkit_registry_theme_leadcolor(self):
         """Test for the 'theme_leadcolor' key and the default value."""
+        #took the color out, update test
         registry = getUtility(IRegistry)
         key = 'theming.toolkit.core.interfaces.IToolkitSettings.theme_leadcolor'
+        self.assertFalse(key in registry.records.keys())
+        #self.assertEquals(registry.records.get(key).value, u'')
+
+    def test_toolkit_registry_show_featuredNavigation(self):
+        """Test for the 'show_featuredNavigation' key and the default value."""
+        #took the color out, update test
+        registry = getUtility(IRegistry)
+        key = 'theming.toolkit.core.interfaces.IToolkitSettings.show_featuredNavigation'
         self.assertTrue(key in registry.records.keys())
-        self.assertEquals(registry.records.get(key).value, u'')
+        self.assertTrue(registry.records.get(key))

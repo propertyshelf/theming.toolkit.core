@@ -18,14 +18,14 @@ class IToolkitSettings(Interface):
     via plone.registry.
     """
 
-    theme_leadcolor = schema.TextLine(
-        default=u"",
-        required=False,
-        title=_(
-            u"label_toolkit_theme_leadcolor",
-            default=u"The main color for this theme.",
-        )
-    )
+    # theme_leadcolor = schema.TextLine(
+    #     default=u"",
+    #     required=False,
+    #     title=_(
+    #         u"label_toolkit_theme_leadcolor",
+    #         default=u"The main color for this theme.",
+    #     )
+    # )
 
     show_headerplugin = schema.Bool(
         default=True,
@@ -60,5 +60,24 @@ class IToolkitSettings(Interface):
         title=_(
             u"label_toolkit_contact_code",
             default=u"Contact Info for Website header",
-        )    
+        )      
+    )
+
+    show_featuredNavigation = schema.Bool(
+        default=True,
+        required=False,
+        title=_(
+            u"label_show_featuredNavigation",
+            default=u"Show the featured Navigation",
+        ),
+    )
+
+    featuredNavigation_taglist =schema.Text(
+        default=u"featured navigation, Featured Navigation",
+        description=PMF(
+            u'help_plugin_code',
+            default=u'Please enter a comma seperated list of category tags to identify Pages& Folders for featured navigation',
+        ),
+        required=False,
+        title=PMF(u'label_featuredNavigation_taglist', default=u'Tag list featured Navigation'),
     )
