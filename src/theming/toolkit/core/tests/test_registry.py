@@ -21,3 +21,26 @@ class TestToolkitRegistry(unittest.TestCase):
         """Test that the settings are registered correctly."""
         registry = getUtility(IRegistry)
         self.assertTrue(registry.forInterface(IToolkitSettings))
+
+
+    def test_toolkit_registry_featuredNavigation(self):
+        """Test for the 'show_featuredNavigation' key and the default value."""
+        #took the color out, update test
+        registry = getUtility(IRegistry)
+        key = 'theming.toolkit.core.interfaces.IToolkitSettings.show_featuredNavigation'
+        self.assertTrue(key in registry.records.keys())
+        self.assertTrue(registry.records.get(key))
+        key_taglist = 'theming.toolkit.core.interfaces.IToolkitSettings.featuredNavigation_taglist'
+        self.assertTrue(key_taglist in registry.records.keys())
+        self.assertEquals(registry.records.get(key_taglist).value, u"featured navigation, Featured Navigation")
+
+    def test_toolkit_registry_show_viewlets(self):
+        """Test the setters for activating the implemented viewlets"""
+        registry = getUtility(IRegistry)
+        key = 'theming.toolkit.core.interfaces.IToolkitSettings.show_headerplugin'
+        self.assertTrue(key in registry.records.keys())
+        self.assertTrue(registry.records.get(key).value)
+
+        key = 'theming.toolkit.core.interfaces.IToolkitSettings.show_title_contact'
+        self.assertTrue(key in registry.records.keys())
+        self.assertFalse(registry.records.get(key).value)
