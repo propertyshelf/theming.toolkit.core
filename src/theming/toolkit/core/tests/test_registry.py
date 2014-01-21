@@ -21,10 +21,3 @@ class TestToolkitRegistry(unittest.TestCase):
         """Test that the settings are registered correctly."""
         registry = getUtility(IRegistry)
         self.assertTrue(registry.forInterface(IToolkitSettings))
-
-    def test_toolkit_registry_theme_leadcolor(self):
-        """Test for the 'theme_leadcolor' key and the default value."""
-        registry = getUtility(IRegistry)
-        key = 'theming.toolkit.core.interfaces.IToolkitSettings.theme_leadcolor'
-        self.assertTrue(key in registry.records.keys())
-        self.assertEquals(registry.records.get(key).value, u'')

@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1'
+version = '0.1dev'
 
 setup(
     name='theming.toolkit.core',
@@ -29,7 +29,6 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'collective.z3cform.colorpicker',
     ],
     extras_require={
         'test': [

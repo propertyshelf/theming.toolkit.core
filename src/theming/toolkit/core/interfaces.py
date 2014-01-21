@@ -18,15 +18,6 @@ class IToolkitSettings(Interface):
     via plone.registry.
     """
 
-    theme_leadcolor = schema.TextLine(
-        default=u"",
-        required=False,
-        title=_(
-            u"label_toolkit_theme_leadcolor",
-            default=u"The main color for this theme.",
-        )
-    )
-
     show_headerplugin = schema.Bool(
         default=True,
         required=False,

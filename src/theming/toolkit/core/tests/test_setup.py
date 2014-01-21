@@ -34,8 +34,3 @@ class TestSetup(unittest.TestCase):
         """Test that the browserlayer is registered."""
         self.assertIn(IThemingToolkitCore, layerutils.registered_layers())
 
-    def test_collective_z3cform_colorpicker_installed(self):
-        """Test that collective.z3cform.colorpicker is installed."""
-        self.assertTrue(
-            self.qi_tool.isProductInstalled('collective.z3cform.colorpicker'),
-        )
