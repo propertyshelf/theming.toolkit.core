@@ -10,7 +10,7 @@
       appId="theming.toolkit.core"
       category="Products"
       condition_expr=""
-      icon_expr="string:$portal_url/++resource++theming.toolkit.core/icon.png"
+      icon_expr="string:$portal_url/logoIcon.png"
       title="Theming Toolset Settings"
       url_expr="string:${portal_url}/@@toolkit-controlpanel"
       visible="True"
