@@ -10,7 +10,7 @@ Changelog
 0.1.2 (2014-03-29)
 ------------------
 
-- Nothing changed yet.
+- fix missing icon for controlpanel, avoids plone not-found errors.
 
 
 0.1 (2014-01-30)
