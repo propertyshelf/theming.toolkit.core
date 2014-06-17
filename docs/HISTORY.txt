@@ -4,7 +4,7 @@ Changelog
 0.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Introducing "Featured Listing Slider", add global configuration and defaults
 
 
 0.1.2 (2014-03-29)

@@ -19,7 +19,7 @@ class IToolkitSettings(Interface):
     """
 
     show_headerplugin = schema.Bool(
-        default=True,
+        default=False,
         required=False,
         title=_(
             u"label_show_header_plugin",
@@ -55,7 +55,7 @@ class IToolkitSettings(Interface):
     )
 
     show_featuredNavigation = schema.Bool(
-        default=True,
+        default=False,
         required=False,
         title=_(
             u"label_show_featuredNavigation",
@@ -71,4 +71,69 @@ class IToolkitSettings(Interface):
         ),
         required=False,
         title=PMF(u'label_featuredNavigation_taglist', default=u'Tag list featured Navigation'),
+    )
+
+    show_featuredListingSlider = schema.Bool(
+        default=True,
+        required=False,
+        title=_(
+            u"label_show_featuredListingSlider",
+            default=u"Activate or deactivate the MLS featured Listing Slider globally",
+        ),
+    )
+
+    display_featuredListingSlider_aboveContent = schema.Bool(
+        default=True,
+        required=False,
+        title=_(
+            u"label_FLS_abovecontent",
+            default=u"Show featuredListingSlider above content.",
+        ),
+    )
+
+    display_featuredListingSlider_belowContent = schema.Bool(
+        default=True,
+        required=False,
+        title=_(
+            u"label_FLS_belowcontent",
+            default=u"Show featuredListingSlider below content.",
+        ),
+    )
+
+    featuredListingSlider_ItemList =schema.TextLine(
+        default=u"",
+        required=False,
+        title=_(
+            u"label_FLS_offset",
+            default=u"Add a list of Listings",
+        )      
+    )
+
+    featuredListingSlider_Limit =schema.TextLine(
+        default=u"",
+        required=False,
+        title=_(
+            u"label_FLS_limit",
+            default=u"Limit the amount of shown listings ",
+        )      
+    )
+
+    featuredListingSlider_offset =schema.TextLine(
+        default=u"",
+        required=False,
+        title=_(
+            u"label_FLS_offset",
+            default=u"Set a global offset for the Listing Items in the List",
+        )      
+    )
+
+
+    featuredListingSliderJS =schema.Text(
+        default=u"<script>alert('FeaturedListingSlider on its way');</script>",
+        description=PMF(
+            u'help_FLS_code',
+            default=u'The global default JavaScript code for initialising the FeaturedListingSlider. This setting can be replaced by the local galery settings',
+        ),
+        required=False,
+        title=PMF(u'label_featuredListingSliderJS', default=u'Default JS to start'),
     )
